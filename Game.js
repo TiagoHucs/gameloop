@@ -1,6 +1,7 @@
 class Game {
-    constructor() {
-        this.hero = new Hero();
+    constructor(resolution) {
+        console.log(resolution)
+        this.hero = new Hero(resolution);
     }
 
     keydown(e) {

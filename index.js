@@ -1,6 +1,6 @@
 //criando canvas
 var canvas = new Canvas();
-var game = new Game();
+var game = new Game(canvas.getResolution());
 
 function update() {
     this.game.update();

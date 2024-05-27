@@ -1,8 +1,9 @@
 class Hero {
-    constructor() {
+    constructor(resolution) {
         this.x = 30;
         this.y = 60;
-        this.s = 30;
+        this.w = resolution.width / 40;
+        this.h = resolution.height / 30;
 
         this.speed = { y: 0, x: 0};
     }

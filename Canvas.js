@@ -18,10 +18,12 @@ class Canvas {
     }
 
     draw(game) {
-        //this.ctx.lineWidth = r.weight || 1;
-        //this.ctx.strokeStyle = r.color;
         this.ctx.fillStyle = 'white';
-        this.ctx.fillRect(game.hero.x, game.hero.y, game.hero.s, game.hero.s);
+        this.ctx.fillRect(game.hero.x, game.hero.y, game.hero.w, game.hero.h);
+    }
+
+    getResolution(){
+        return {width: this.canvas.width, height: this.canvas.height}
     }
 
 }
