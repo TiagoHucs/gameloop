@@ -19,17 +19,33 @@ this.window.addEventListener('keyup', e => {
     this.game.keyup(e);
 })
 
-function execute(){
-    update();
-    render();
-    requestAnimationFrame(execute);
+//ANIMAÇÃO SEM LIMITAR FRAMES
+//function execute(){
+//    update();
+//    render();
+//    requestAnimationFrame(execute);
+//}
+//requestAnimationFrame(execute);
+
+
+//ANIMAÇÃO LIMITANDO FRAMES
+let lastFrameTime = 0;
+const fps = 1;
+const fpsInterval = 200 / fps;
+function animate(currentTime) {
+    //update();
+    //render();
+    requestAnimationFrame(animate);
+
+    const elapsed = currentTime - lastFrameTime;
+
+    if (elapsed > fpsInterval) {
+        lastFrameTime = currentTime - (elapsed % fpsInterval);
+        update();
+        render();
+    }
 }
-
-requestAnimationFrame(execute);
-
-
-
-
+requestAnimationFrame(animate);
 
 
 
